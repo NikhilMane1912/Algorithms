@@ -70,7 +70,7 @@ public class HDU1072 {
             time = 6;
         }
         
-        if(times[x][y]>time && steps[x][y]<step) return;
+        if(times[x][y]>=time && steps[x][y]<=step) return;
         steps[x][y] = step;
         times[x][y] = time;
         
@@ -110,7 +110,9 @@ public class HDU1072 {
         
         DFS(maze,x,y,0,6);
         
-        System.out.println(minSteps);
-        
+        if(minSteps==Integer.MAX_VALUE)
+            System.out.println(-1);
+        else
+            System.out.println(minSteps);
     }
 }
